@@ -1,10 +1,13 @@
-const FoodItem = () =>{
-    let foodItem = ['dal','chawal','dehi','roti'];
-    return(
-        <ul className="list-group">
-        {foodItem.map(item =><li key={item} className="list-group-item">{item}</li>)}
-      </ul>
-    )
+import Item from "./Item";
 
+const FoodItems = ({ foodList }) => {
+  return (
+    <ul className="list-group">
+      {foodList.map((food, index) => (
+        <Item key={index} foodItem={food} />
+      ))}
+    </ul>
+  );
 };
-export default FoodItem;
+
+export default FoodItems;
